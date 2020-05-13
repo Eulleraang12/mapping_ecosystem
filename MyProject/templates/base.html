@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+    <html lang="pt-br">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}"/>
+            <link rel="stylesheet" href="{% static 'css/materialize.css' %}"/>
+            <link rel="stylesheet" href="{% static 'css/reset.css' %}"/>
+
+            <title>{%block title%} {%endblock%}</title>
+
+        </head>
+        <body>
+            
+            {%include 'nav.html' %}
+            {%block content%} 
+            
+            <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+            <script src="js/materialize.js"></script>  
+            <script src="js/botoes.js"></script> 
+            
+            {%endblock%} 
+        </body>
+        
+    </html> 

@@ -1,0 +1,110 @@
+
+{%extends 'base.html' %}
+{%block content%}
+           
+            <!-- Inicia Formulário Dados -->
+            <div  id="form" class="container row justify-align">
+              
+              <section class="row card-panel">
+                              <!-- 
+                                 Primeiro Formulario "Dados" 
+                                 Este formulario será particionado em blocos de exibição
+                                 sendo cada "main div" um bloco de preechimento de dados
+                                 para o banco, possivelmente usando uma função carousel.
+                               -->
+                  <form class="col s12" name="form">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                                 <!--Dados Cadastrais da Empresa-->
+                                 <div id="dadosCadastrais">
+                                 
+                                   <div class="row">
+
+                                    <form action="{% url 'addUsers' % }" method="post">
+                                       {% csrf_token %}
+                                       
+                                       <div id="dadosCadastrais">
+                                        <label for="first_name"> Dados Cadastrais </label>
+                                        <div class="row">
+                                          <div class="input-field col s12 m5 offset-m2">
+                                            {{form.Empresa}} 
+                                            
+                                          </div>
+                                            <div class="input-field col s12 m3">
+                                              {{form.CNPJ}} 
+                                              
+                                            </div>
+                                        </div>
+                        
+                                        <div class="row">
+                                          <div class="input-field col s12 m4 offset-m2">
+                                            {{form.Email}} 
+                                          </div>
+                                          <div class="input-field col s12 m4">
+                                            {{form.Site}} 
+                                           </div>
+                                        </div>
+                                        
+
+                                        <!--Endereço-->
+                                      <div id="endereco">
+                                       <div class="row">
+                                         <div class="input-field col s12 m5 offset-m2">
+                                          {{form.Rua}}
+                                         </div>
+                                         <div class="input-field col s12 m3">
+                                          {{form.Bairro}}
+                                          </div>
+                                      </div>
+        
+                                       <div class="row">
+                                             <div class="input-field col s12 m3 offset-m2">
+                                               {{form.CEP}}
+                                             </div>
+        
+                                               <div class="input-field col s12 m3">
+                                                {{form.Cidade}}
+                                               </div>
+        
+                                                 <div class="input-field col s12 m2">
+                                                  {{form.Estado}}
+                                                 </div>     
+                                         </div>
+         
+                  
+              
+                          
+
+                                         <input id="salvarDados" class="botao-1 btn waves-effect waves-teal" value="Cadastrar" type="submit">
+                                    </form>
+                    </form>
+                </section>
+            </div>                  
+                                                               
+                                  
+                       
+                       
+                       
+                       
+                       <!-- inicia o bloco GoogleMaps -->
+                      <div id="mapa" class="mapa">
+                       <div class="container teal light-2">
+                        <img src="http://maps.googleapis.com/maps/api/staticmap?center=LAT, LONG
+                        &zoom=11&size=250x250">
+                       </div>
+                      </div>
+                      <!-- finaliza o bloco GoogleMaps -->
+                 
+ 
+{%endblock%} 
+
+
+
+
+    
+              
+                             
+
+
+
